@@ -3,11 +3,16 @@ name = "dowhistle-mcp-server"
 version = "0.1.0"
 description = "MCP Server with Agent Capabilities"
 readme = "README.md"
-requires-python = ">=3.13"
-keywords = ["mcp", "server", "agents", "api","fastmcp","dowhistle"]
+
+# ✅ Render supports Python up to 3.12 only
+requires-python = ">=3.10,<3.13"
+
+keywords = ["mcp", "server", "agents", "api", "fastmcp", "dowhistle"]
+
 authors = [
     { name = "Nishanth M", email = "developernishanth2000@gmail.com" }
 ]
+
 dependencies = [
     "fastmcp>=2.11.3",
     "uvicorn[standard]>=0.35.0",
@@ -17,7 +22,9 @@ dependencies = [
     "python-dotenv>=1.1.1",
     "tenacity>=9.1.2",
     "structlog>=25.4.0",
-    "openai>=1.58.1"
+    "openai>=1.58.1",
+    "workos>=5.35.0",
+    "starlette>=0.37.2"
 ]
 
 [project.optional-dependencies]
@@ -30,6 +37,4 @@ dev = [
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-pythonpath = [
-    "."
-]
+pythonpath = ["."]
